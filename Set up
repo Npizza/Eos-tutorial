@@ -1,0 +1,41 @@
+# Run the nodeos
+  ./nodeos
+  
+# Cleos
+  Generate wallet: ./cleos wallet create
+    # Outputs a password that you need to save to be able to lock/unlock the wallet
+  Authorize the creation of a account: ./cleos create account eosio currency PUBLIC_KEY_1 PUBLIC_KEY_2
+  Ganarate keys: ./cleos create key
+  Check that the account was successfully created : ./cleos get account currency
+  Import the active private key: ./cleos wallet import XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  Verify that there is no current contract: ./cleos get code currency
+#Wallet
+  Create: cleos wallet create -n NameOf Wallet
+  Confirm that the wallet was created: cleos wallet list
+  Lock Wallet: cleos wallet lock -n periwinkle //still dont know why @1
+  Unlock: cleos wallet unlock -n periwinkle
+  Tip:The wallet whould be open first to see it from the Nodeos
+  Check which keys are loaded: cleos wallet keys
+  Create account: cleos create account inita ${desired_account_name} ${public_key_1} ${public_key_2}
+    Breakdown of the positional arguments for create account command
+    
+    ->inita is the name of the account name that will fund the account creation, and subsequently the new account.
+    ->desired_account_name is the name of the account you would like to create
+    ->public_key_1 and public_key_2 are public keys, the first one will be permissioned as the owner authority of your
+      account, and the second one will be permissioned for the active authority of your account.
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @1:The wallet will protect these keys when it's locked. Accessing the keys in a locked wallet requires the master password that
+  was provided to you during wallet creation. Because the wallet file itself is encrypted, it's not required to backup your
+  keypairs, but backing up your wallet file in a safe place is highly recommended.
